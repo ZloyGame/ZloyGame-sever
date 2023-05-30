@@ -1,0 +1,7 @@
+{
+  "serverPort" : 5000,
+  "dbUrl" : "mongodb+srv://20211221:20211221@disk.a3togqd.mongodb.net/?retryWrites=true&w=majority",
+  "secretKey": "mern-secret-key",
+  "filePath": "C:\\Users\\Lenovo\\WebstormProjects\\cloud-storage\\server\\files",
+  "staticPath": "C:\\Users\\Lenovo\\WebstormProjects\\cloud-storage\\server\\static"
+}

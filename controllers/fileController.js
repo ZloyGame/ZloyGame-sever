@@ -120,16 +120,17 @@ class FileController {
         try {
             const file = await File.findOne({_id: req.query.id, user: req.user.id})
             if (!file) {
-                return res.status(400).json({message: 'file not found'})
+                return res.status(400).json({message: 'File not found'})
             }
-            fileService.deleteFile(req, file)
-            await file.remove()
+            await fileService.deleteFile(req, file)
+            await File.deleteOne({_id: file._id}) // Используйте метод deleteOne для удаления файла
             return res.json({message: 'File was deleted'})
         } catch (e) {
             console.log(e)
-            return res.status(400).json({message: 'Dir is not empty'})
+            return res.status(400).json({message: 'Failed to delete file'})
         }
     }
+
 
     async searchFile(req, res) {
         try {
